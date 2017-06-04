@@ -456,13 +456,13 @@ EOF
     }
 }
 
-resource "null_resource" "deploy_nodejs_app" {
+resource "null_resource" "deploy_nodejs_fullstack" {
     depends_on = ["null_resource.setup_kubectl"]
     provisioner "local-exec" {
         command = <<EOF
-            sed -e "s/\$EXT_IP1/${digitalocean_droplet.k8s_worker.0.ipv4_address}/" < ${path.module}/example-apps/nodejs-app.yaml > ./secrets/nodejs-app.rendered.yaml
+            sed -e "s/\$EXT_IP1/${digitalocean_droplet.k8s_worker.0.ipv4_address}/" < ${path.module}/examples/nodejs-fullstack.yaml > ./secrets/nodejs-fullstack.rendered.yaml
             until kubectl get pods 2>/dev/null; do printf '.'; sleep 5; done
-            kubectl create -f ./secrets/nodejs-app.rendered.yaml
+            kubectl create -f ./secrets/nodejs-fullstack.rendered.yaml
 
 EOF
     }
@@ -473,7 +473,7 @@ resource "null_resource" "deploy_nodejs_helloworld" {
     depends_on = ["null_resource.setup_kubectl"]
     provisioner "local-exec" {
         command = <<EOF
-            sed -e "s/\$EXT_IP1/${digitalocean_droplet.k8s_worker.0.ipv4_address}/" < ${path.module}/example-apps/nodejs-helloworld.yaml > ./secrets/nodejs-helloworld.rendered.yaml
+            sed -e "s/\$EXT_IP1/${digitalocean_droplet.k8s_worker.0.ipv4_address}/" < ${path.module}/examples/nodejs-helloworld.yaml > ./secrets/nodejs-helloworld.rendered.yaml
             until kubectl get pods 2>/dev/null; do printf '.'; sleep 5; done
             kubectl create -f ./secrets/nodejs-helloworld.rendered.yaml
 
