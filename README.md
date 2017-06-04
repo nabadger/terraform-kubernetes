@@ -1,10 +1,11 @@
+# terraform-kubernetes
 Adapted from https://github.com/hermanjunge/kubernetes-digitalocean-terraform
 
 Added examples for
 * A simple node-js helloworld app (default on port 80)
 * A more complete node-js app which reads/writes to a cockroach-db backend
 
-Using:
+# Running
 
 * Install terraform
 * Install cfssl and cfssljson (make sure they get added to your $PATH)
@@ -30,8 +31,15 @@ ssh-keygen -f ${HOME}/.ssh/id_rsa_tf
 terraform apply
 ```
 
+# Verify cluster setup
+```
+# View k8s dashboard via your local machine after running the kubectl proxy
+kubectl proxy
+```
 
-TODO:
+* Browse to http://$external_ip:80 to view the nodejs app (refershing will read/write data to the dB)
+
+# TODO:
 * terraform apply seems to get stuck during some node creation (ctcl-c and retry works)...hmm
 * Create database credentials automatically - in meantime run ./scripts/create-example-db
 
