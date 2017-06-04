@@ -7,17 +7,17 @@ Added examples for
 Using:
 
 * Install terraform
-* Install cfssl
+* Install cfssl and cfssljson (make sure they get added to your $PATH)
 
 * Create your key
 ```
 ssh-keygen -f ${HOME}/.ssh/id_rsa_tf
 ```
 
-* Import your key into digital-ocean
+* Import your new ssh key (above) into digital-ocean
 > https://cloud.digitalocean.com/settings/security
 
-* Create a digital-ocean token and copy it into ./secrets/DO_TOKEN
+* Create a digital-ocean token and add it to ./secrets/DO_TOKEN
 > https://cloud.digitalocean.com/settings/api/tokens
 
 * Run helper script to setup env
@@ -32,5 +32,6 @@ terraform apply
 
 
 TODO:
+* terraform apply seems to get stuck during some node creation (ctcl-c and retry works)...hmm
 * Create database credentials automatically - in meantime run ./scripts/create-example-db
 
