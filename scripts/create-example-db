@@ -1,0 +1,2 @@
+kubectl exec -ti cockroachdb-0 -- /cockroach/cockroach user set test --host cockroachdb-0 --insecure
+kubectl exec -ti cockroachdb-0 -- /cockroach/cockroach sql --host cockroachdb-0 --insecure -e "CREATE DATABASE test;"
