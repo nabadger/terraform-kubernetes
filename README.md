@@ -9,11 +9,10 @@ Added examples for
 
 * Install terraform
 * Install cfssl and cfssljson (make sure they get added to your $PATH)
+* Install kubectl 
 
 * Create your key
-```
-ssh-keygen -f ${HOME}/.ssh/id_rsa_tf
-```
+```ssh-keygen -f ${HOME}/.ssh/id_rsa_tf```
 
 * Import your new ssh key (above) into digital-ocean
 > https://cloud.digitalocean.com/settings/security
@@ -22,27 +21,26 @@ ssh-keygen -f ${HOME}/.ssh/id_rsa_tf
 > https://cloud.digitalocean.com/settings/api/tokens
 
 * Run helper script to setup env
-```
-. ./setup_terraform.sh
-```
+```. ./setup_terraform.sh```
 
 * Run terraform
-```
-terraform apply
-```
+```terraform apply```
 
 # Verify cluster setup
-```
-# View k8s dashboard via your local machine after running the kubectl proxy
-kubectl proxy
-```
+
+Verirfy cluster is setup with:
+```kubectl get all```
+
+Make sure you setup a 'test' database and a 'test' user first.
+```./scripts/create-example-db```
+
+Run the proxy to get access to the kubernetes-dashboard from your local machien
+```kubectl proxy```
 
 * Browse to http://$external_ip:80 to view the nodejs app (refershing will read/write data to the dB)
 
 # Teardown cluster
-```
-terraform destroy
-```
+```terraform destroy```
 
 # TODO:
 * terraform apply seems to get stuck during some node creation (ctcl-c and retry works)...hmm
