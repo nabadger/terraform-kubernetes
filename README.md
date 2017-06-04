@@ -28,7 +28,7 @@ Added examples for
 
 # Verify cluster setup
 
-Verirfy cluster is setup with:
+Verify cluster is setup with:
 ```kubectl get all```
 
 Make sure you setup a 'test' database and a 'test' user first.
