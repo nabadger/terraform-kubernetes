@@ -1,0 +1,86 @@
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv0
+  labels:
+    type: local
+    app: cockroachdb
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/tmp/0"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv1
+  labels:
+    type: local
+    app: cockroachdb
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/tmp/1"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv2
+  labels:
+    type: local
+    app: cockroachdb
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/tmp/2"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: datadir-cockroachdb-0
+  labels:
+    app: cockroachdb
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: datadir-cockroachdb-1
+  labels:
+    app: cockroachdb
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: datadir-cockroachdb-2
+  labels:
+    app: cockroachdb
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+

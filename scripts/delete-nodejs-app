@@ -1,0 +1,1 @@
+kubectl delete rc,po,svc -l k8s-app=nodejs-app

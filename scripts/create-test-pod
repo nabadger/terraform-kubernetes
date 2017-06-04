@@ -1,0 +1,1 @@
+kubectl run -i --tty testpod --image=nabadger/nodejs-helloworld:latest -- sh
