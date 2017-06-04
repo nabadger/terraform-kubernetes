@@ -39,6 +39,11 @@ kubectl proxy
 
 * Browse to http://$external_ip:80 to view the nodejs app (refershing will read/write data to the dB)
 
+# Teardown cluster
+```
+terraform destroy
+```
+
 # TODO:
 * terraform apply seems to get stuck during some node creation (ctcl-c and retry works)...hmm
 * Create database credentials automatically - in meantime run ./scripts/create-example-db
