@@ -1,6 +1,8 @@
 # terraform-kubernetes
 Adapted from https://github.com/hermanjunge/kubernetes-digitalocean-terraform
 
+This is for personal development to learning how these components work.
+
 Added examples for
 * A simple node-js helloworld app (default on port 80)
 * A more complete node-js app which reads/writes to a cockroach-db backend
