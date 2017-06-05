@@ -43,7 +43,8 @@ If you're not running kubectl on your local machine, you can make use of some ss
 If you have kubectl on your local machine, configure it to access the remote cluster:
 * https://kubernetes.io/docs/tasks/access-application-cluster/authenticate-across-clusters-kubeconfig/
 
-* Browse to http://$external_ip:80 to view the nodejs app (refershing will read/write data to the dB)
+Browse to nodejs-app:
+* http://$external_ip:80 to view the nodejs app (refershing will read/write data to the dB)
 
 # Teardown cluster
 ```terraform destroy```
