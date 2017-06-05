@@ -47,5 +47,6 @@ If you're not running kubectl on your laptop, you can make use of some ssh-forwa
 
 # TODO:
 * terraform apply seems to get stuck during some node creation (ctcl-c and retry works)...hmm
-* Create database credentials automatically - in meantime run ./scripts/create-example-db
+* make kube master h/a 
+* Create database credentials automatically (probably via a nodejs bootstrap script, not here0
 
