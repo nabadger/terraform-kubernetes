@@ -51,8 +51,17 @@ Browse to nodejs-app:
 # Teardown cluster
 ```terraform destroy```
 
-# TODO:
+# TODO Terraform
 * terraform apply seems to get stuck during some node creation (ctcl-c and retry works)...hmm
+
+# TODO Kubernetes
 * make kube master h/a 
-* Create database credentials automatically (probably via a nodejs bootstrap script, not here0
+* Install monitoring of cluster (heapster / grafana / influx-db): 
+** https://github.com/kubernetes/heapster/blob/master/docs/influxdb.md - mostly works, but fails on grafana due to invalid tag version number
+* Test cluster resource limits
+** https://github.com/kubernetes/kubernetes/tree/master/test/images/resource-consumer
+
+# TODO Sample NodeJS app
+* Create database credentials automatically (probably via a nodejs bootstrap script, not here
+* 
 
