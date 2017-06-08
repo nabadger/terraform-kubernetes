@@ -56,10 +56,9 @@ Browse to nodejs-app:
 
 # TODO Kubernetes
 * make kube master h/a 
-* Install monitoring of cluster (heapster / grafana / influx-db): 
-** https://github.com/kubernetes/heapster/blob/master/docs/influxdb.md - mostly works, but fails on grafana due to invalid tag version number
-* Test cluster resource limits
-** https://github.com/kubernetes/kubernetes/tree/master/test/images/resource-consumer
+* Install monitoring of cluster (heapster / grafana / influx-db). See https://github.com/kubernetes/heapster/blob/master/docs/influxdb.md - mostly works, but fails on grafana due to invalid tag version number
+* Test cluster resource limits: https://github.com/kubernetes/kubernetes/tree/master/test/images/resource-consumer
+* Test authentication to API Service: https://kubernetes.io/docs/admin/authentication/
 
 # TODO Sample NodeJS app
 * Create database credentials automatically (probably via a nodejs bootstrap script, not here
