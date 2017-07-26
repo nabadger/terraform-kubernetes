@@ -61,6 +61,5 @@ Browse to nodejs-app:
 * Test authentication to API Service: https://kubernetes.io/docs/admin/authentication/
 
 # TODO Sample NodeJS app
-* Create database credentials automatically (probably via a nodejs bootstrap script, not here
-* 
+* Create database credentials automatically (turns out various db images support this, i.e. mariadb)
 
